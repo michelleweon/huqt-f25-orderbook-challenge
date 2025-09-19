@@ -39,7 +39,7 @@ pub enum Command {
 }
 
 impl Command {
-    fn order(id: u64, side: Side, size: i64, price: i64) -> Self {
+    pub fn order(id: u64, side: Side, size: i64, price: i64) -> Self {
         Self::AddOrder {
             id,
             side,
@@ -47,7 +47,7 @@ impl Command {
             price,
         }
     }
-    fn cancel(id: u64) -> Self {
+    pub fn cancel(id: u64) -> Self {
         Self::CancelOrder { id }
     }
 }
